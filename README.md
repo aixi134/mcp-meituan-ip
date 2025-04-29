@@ -1,6 +1,10 @@
 # mcp-meituan-ip MCP server
 
+A dynamic MCP server management service that creates, runs, and manages Model Context Protocol (MCP) servers dynamically. This service itself functions as an MCP server and launches/manages other MCP servers as child processes, enabling a flexible MCP ecosystem.
 
+<a href="https://glama.ai/mcp/servers/@aixi134/mcp-meituan-ip">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@aixi134/mcp-meituan-ip/badge" alt="mcp-meituan-ip MCP server" />
+</a>
 
 ## Components
 
@@ -100,12 +104,10 @@ Note: You'll need to set PyPI credentials via environment variables or command f
 Since MCP servers run over stdio, debugging can be challenging. For the best debugging
 experience, we strongly recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector).
 
-
 You can launch the MCP Inspector via [`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) with this command:
 
 ```bash
 npx @modelcontextprotocol/inspector uv --directory D:\idea-work\mcp-meituan-ip run mcp-meituan-ip
 ```
-
 
 Upon launching, the Inspector will display a URL that you can access in your browser to begin debugging.
