@@ -174,8 +174,8 @@ async def handle_list_prompts() -> list[types.Prompt]:
     """
     return [
         types.Prompt(
-            name="summarize-notes",
-            description="Creates a summary of all notes",
+            name="美团IP查询工具",
+            description="使用美团暴露的接口开发的IP与位置信息转换",
             arguments=[
                 types.PromptArgument(
                     name="style",
@@ -195,14 +195,14 @@ async def handle_get_prompt(
     Generate a prompt by combining arguments with server state.
     The prompt includes all current notes and can be customized via arguments.
     """
-    if name != "summarize-notes":
+    if name != "美团IP查询工具":
         raise ValueError(f"Unknown prompt: {name}")
 
     style = (arguments or {}).get("style", "brief")
     detail_prompt = " Give extensive details." if style == "detailed" else ""
 
     return types.GetPromptResult(
-        description="Summarize the current notes",
+        description="使用美团暴露的接口开发的IP与位置信息转换",
         messages=[
             types.PromptMessage(
                 role="user",
@@ -228,7 +228,7 @@ async def handle_list_tools() -> list[types.Tool]:
     return [
         types.Tool(
             name="get-ip-loc",
-            description="获取指定ip的位置信息",
+            description="获取指定ip的大致位置与经纬度信息",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -239,7 +239,7 @@ async def handle_list_tools() -> list[types.Tool]:
         ),
         types.Tool(
             name="get-latlng",
-            description="根据经纬度获取位置信息",
+            description="根据经纬度获取详细位置信息",
             inputSchema={
                 "type": "object",
                 "properties": {
